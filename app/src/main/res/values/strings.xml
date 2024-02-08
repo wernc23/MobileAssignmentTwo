@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AssignmentTwoProject</string>
+    <string name="roll">Roll</string>
+    <string name="explicit">Start Activity Explicitly</string>
+</resources>
