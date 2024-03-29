@@ -53,6 +53,12 @@ fun ButtonWithLabel(context: Context, buttonText: String, modifier: Modifier = M
         }) {
             Text(text = "$buttonText Implicitly")
         }
+        Button(onClick = {
+            val explicitIntent = Intent(context, ThirdActivity::class.java)
+            context.startActivity(explicitIntent)
+        }) {
+            Text(text = "View Image Activity")
+        }
     }
 }
 
