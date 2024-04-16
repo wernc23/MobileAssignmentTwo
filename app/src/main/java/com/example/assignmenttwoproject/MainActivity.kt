@@ -14,6 +14,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
@@ -38,10 +40,13 @@ fun ButtonWithLabel(context: Context, buttonText: String, modifier: Modifier = M
     ){
         Text(text = "Chad Werning", fontSize = 32.sp, textAlign = TextAlign.Center)
         Text(text = "1370538", fontSize = 32.sp, textAlign = TextAlign.Center)
-        Button(onClick = {
+        Button(
+            onClick = {
             val explicitIntent = Intent(context, SecondActivity::class.java)
             context.startActivity(explicitIntent)
-        }) {
+        },
+            modifier = Modifier.semantics { contentDescription = "$buttonText Explicitly" }
+        ) {
             Text(text = "$buttonText Explicitly")
         }
         Button(onClick = {
